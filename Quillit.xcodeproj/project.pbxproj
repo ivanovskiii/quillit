@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D579D9B2B0647BF00DDC09F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579D9A2B0647BF00DDC09F /* FirebaseAuth */; };
+		1D579D9D2B0647BF00DDC09F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579D9C2B0647BF00DDC09F /* FirebaseDatabase */; };
+		1D579D9F2B0647BF00DDC09F /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579D9E2B0647BF00DDC09F /* FirebaseDatabaseSwift */; };
+		1D579DA12B0647BF00DDC09F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DA02B0647BF00DDC09F /* FirebaseFirestore */; };
+		1D579DA32B0647BF00DDC09F /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DA22B0647BF00DDC09F /* FirebaseFirestoreCombine-Community */; };
+		1D579DA52B0647BF00DDC09F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DA42B0647BF00DDC09F /* FirebaseFirestoreSwift */; };
+		1D579DA72B0647BF00DDC09F /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DA62B0647BF00DDC09F /* FirebaseInAppMessaging-Beta */; };
+		1D579DA92B0647BF00DDC09F /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DA82B0647BF00DDC09F /* FirebaseInAppMessagingSwift-Beta */; };
+		1D579DAB2B0647BF00DDC09F /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DAA2B0647BF00DDC09F /* FirebaseMessaging */; };
+		1D579DAD2B0647BF00DDC09F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DAC2B0647BF00DDC09F /* FirebaseStorage */; };
+		1D579DAF2B0647BF00DDC09F /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DAE2B0647BF00DDC09F /* FirebaseStorageCombine-Community */; };
 		1D89CE462B04EFE800E7F68E /* QuillitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE452B04EFE800E7F68E /* QuillitApp.swift */; };
 		1D89CE482B04EFE800E7F68E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE472B04EFE800E7F68E /* ContentView.swift */; };
 		1D89CE4A2B04EFEA00E7F68E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D89CE492B04EFEA00E7F68E /* Assets.xcassets */; };
@@ -14,6 +25,33 @@
 		1D89CE572B04EFEB00E7F68E /* QuillitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE562B04EFEB00E7F68E /* QuillitTests.swift */; };
 		1D89CE612B04EFEB00E7F68E /* QuillitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE602B04EFEB00E7F68E /* QuillitUITests.swift */; };
 		1D89CE632B04EFEB00E7F68E /* QuillitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE622B04EFEB00E7F68E /* QuillitUITestsLaunchTests.swift */; };
+		1D89CE702B04F1BA00E7F68E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE6F2B04F1BA00E7F68E /* MainView.swift */; };
+		1D89CE752B04F25B00E7F68E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE742B04F25B00E7F68E /* HomeView.swift */; };
+		1D89CE772B04F26F00E7F68E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE762B04F26F00E7F68E /* SearchView.swift */; };
+		1D89CE792B04F2C700E7F68E /* NewQuillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE782B04F2C700E7F68E /* NewQuillView.swift */; };
+		1D89CE7B2B04F3BC00E7F68E /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE7A2B04F3BC00E7F68E /* NotificationView.swift */; };
+		1D89CE7D2B04F3C600E7F68E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE7C2B04F3C600E7F68E /* ProfileView.swift */; };
+		1DC03B002B065AD700AE0ABC /* Ahsing-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1D579DBC2B06533C00DDC09F /* Ahsing-Regular.otf */; };
+		1DC03B012B065AD900AE0ABC /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D579DB42B06532600DDC09F /* PTSans-Bold.ttf */; };
+		1DC03B022B065ADB00AE0ABC /* PTSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D579DB72B06532700DDC09F /* PTSans-BoldItalic.ttf */; };
+		1DC03B032B065ADD00AE0ABC /* PTSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D579DB52B06532600DDC09F /* PTSans-Italic.ttf */; };
+		1DC03B042B065ADE00AE0ABC /* PTSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D579DB62B06532700DDC09F /* PTSans-Regular.ttf */; };
+		1DC03B052B065AE000AE0ABC /* SpaceMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D579DBB2B06533100DDC09F /* SpaceMono-Bold.ttf */; };
+		1DC03B062B065AE200AE0ABC /* SpaceMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D579DB92B06533000DDC09F /* SpaceMono-BoldItalic.ttf */; };
+		1DC03B072B065AE400AE0ABC /* SpaceMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D579DB82B06533000DDC09F /* SpaceMono-Italic.ttf */; };
+		1DC03B082B065AE600AE0ABC /* SpaceMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D579DBA2B06533100DDC09F /* SpaceMono-Regular.ttf */; };
+		1DC03B0A2B06659E00AE0ABC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03B092B06659E00AE0ABC /* LoginView.swift */; };
+		1DC03B0C2B0665B000AE0ABC /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03B0B2B0665B000AE0ABC /* CreateAccountView.swift */; };
+		1DC03B112B06B8CA00AE0ABC /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03B102B06B8CA00AE0ABC /* UserRepository.swift */; };
+		1DC03B142B06BC1E00AE0ABC /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03B132B06BC1E00AE0ABC /* AuthViewModel.swift */; };
+		1DC03B162B06C30300AE0ABC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DC03B152B06C30300AE0ABC /* GoogleService-Info.plist */; };
+		1DC03B182B0771EA00AE0ABC /* QuillRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03B172B0771EA00AE0ABC /* QuillRepository.swift */; };
+		1DC03B1A2B07731F00AE0ABC /* QuillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03B192B07731F00AE0ABC /* QuillViewModel.swift */; };
+		1DC03B1C2B0795EA00AE0ABC /* QuillCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03B1B2B0795EA00AE0ABC /* QuillCardView.swift */; };
+		1DC03B1E2B07C8F300AE0ABC /* FullQuillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC03B1D2B07C8F300AE0ABC /* FullQuillView.swift */; };
+		1DCB13182B051F070091322E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB13172B051F070091322E /* User.swift */; };
+		1DCB131A2B051F140091322E /* Quill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB13192B051F140091322E /* Quill.swift */; };
+		1DCB131C2B0520520091322E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB131B2B0520520091322E /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +72,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D579DB42B06532600DDC09F /* PTSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Bold.ttf"; sourceTree = "<group>"; };
+		1D579DB52B06532600DDC09F /* PTSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Italic.ttf"; sourceTree = "<group>"; };
+		1D579DB62B06532700DDC09F /* PTSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Regular.ttf"; sourceTree = "<group>"; };
+		1D579DB72B06532700DDC09F /* PTSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1D579DB82B06533000DDC09F /* SpaceMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Italic.ttf"; sourceTree = "<group>"; };
+		1D579DB92B06533000DDC09F /* SpaceMono-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1D579DBA2B06533100DDC09F /* SpaceMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Regular.ttf"; sourceTree = "<group>"; };
+		1D579DBB2B06533100DDC09F /* SpaceMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Bold.ttf"; sourceTree = "<group>"; };
+		1D579DBC2B06533C00DDC09F /* Ahsing-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ahsing-Regular.otf"; sourceTree = "<group>"; };
+		1D579DBD2B06537100DDC09F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1D89CE422B04EFE800E7F68E /* Quillit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quillit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D89CE452B04EFE800E7F68E /* QuillitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillitApp.swift; sourceTree = "<group>"; };
 		1D89CE472B04EFE800E7F68E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +92,24 @@
 		1D89CE5C2B04EFEB00E7F68E /* QuillitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuillitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D89CE602B04EFEB00E7F68E /* QuillitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillitUITests.swift; sourceTree = "<group>"; };
 		1D89CE622B04EFEB00E7F68E /* QuillitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1D89CE6F2B04F1BA00E7F68E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1D89CE742B04F25B00E7F68E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1D89CE762B04F26F00E7F68E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		1D89CE782B04F2C700E7F68E /* NewQuillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuillView.swift; sourceTree = "<group>"; };
+		1D89CE7A2B04F3BC00E7F68E /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		1D89CE7C2B04F3C600E7F68E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1DC03B092B06659E00AE0ABC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1DC03B0B2B0665B000AE0ABC /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		1DC03B102B06B8CA00AE0ABC /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		1DC03B132B06BC1E00AE0ABC /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		1DC03B152B06C30300AE0ABC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1DC03B172B0771EA00AE0ABC /* QuillRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillRepository.swift; sourceTree = "<group>"; };
+		1DC03B192B07731F00AE0ABC /* QuillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillViewModel.swift; sourceTree = "<group>"; };
+		1DC03B1B2B0795EA00AE0ABC /* QuillCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillCardView.swift; sourceTree = "<group>"; };
+		1DC03B1D2B07C8F300AE0ABC /* FullQuillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullQuillView.swift; sourceTree = "<group>"; };
+		1DCB13172B051F070091322E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1DCB13192B051F140091322E /* Quill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quill.swift; sourceTree = "<group>"; };
+		1DCB131B2B0520520091322E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +117,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D579DAF2B0647BF00DDC09F /* FirebaseStorageCombine-Community in Frameworks */,
+				1D579DAB2B0647BF00DDC09F /* FirebaseMessaging in Frameworks */,
+				1D579D9F2B0647BF00DDC09F /* FirebaseDatabaseSwift in Frameworks */,
+				1D579DA72B0647BF00DDC09F /* FirebaseInAppMessaging-Beta in Frameworks */,
+				1D579DAD2B0647BF00DDC09F /* FirebaseStorage in Frameworks */,
+				1D579DA92B0647BF00DDC09F /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				1D579DA12B0647BF00DDC09F /* FirebaseFirestore in Frameworks */,
+				1D579D9D2B0647BF00DDC09F /* FirebaseDatabase in Frameworks */,
+				1D579DA32B0647BF00DDC09F /* FirebaseFirestoreCombine-Community in Frameworks */,
+				1D579D9B2B0647BF00DDC09F /* FirebaseAuth in Frameworks */,
+				1D579DA52B0647BF00DDC09F /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +148,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D579D962B06461500DDC09F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		1D579DB02B06530300DDC09F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1D579DBC2B06533C00DDC09F /* Ahsing-Regular.otf */,
+				1D579DB42B06532600DDC09F /* PTSans-Bold.ttf */,
+				1D579DB72B06532700DDC09F /* PTSans-BoldItalic.ttf */,
+				1D579DB52B06532600DDC09F /* PTSans-Italic.ttf */,
+				1D579DB62B06532700DDC09F /* PTSans-Regular.ttf */,
+				1D579DBB2B06533100DDC09F /* SpaceMono-Bold.ttf */,
+				1D579DB92B06533000DDC09F /* SpaceMono-BoldItalic.ttf */,
+				1D579DB82B06533000DDC09F /* SpaceMono-Italic.ttf */,
+				1D579DBA2B06533100DDC09F /* SpaceMono-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1D579DBE2B0654BE00DDC09F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1D579DB02B06530300DDC09F /* Fonts */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		1D89CE392B04EFE700E7F68E = {
 			isa = PBXGroup;
 			children = (
@@ -94,9 +202,16 @@
 		1D89CE442B04EFE800E7F68E /* Quillit */ = {
 			isa = PBXGroup;
 			children = (
+				1DC03B0F2B06B8AA00AE0ABC /* Repo */,
+				1D579DBE2B0654BE00DDC09F /* Shared */,
+				1D579DBD2B06537100DDC09F /* Info.plist */,
+				1D579D962B06461500DDC09F /* Repository */,
+				1DCB13162B051EF80091322E /* View Models */,
+				1DCB13152B051ED40091322E /* Models */,
+				1D89CE712B04F1E100E7F68E /* Views */,
 				1D89CE452B04EFE800E7F68E /* QuillitApp.swift */,
-				1D89CE472B04EFE800E7F68E /* ContentView.swift */,
 				1D89CE492B04EFEA00E7F68E /* Assets.xcassets */,
+				1DC03B152B06C30300AE0ABC /* GoogleService-Info.plist */,
 				1D89CE4B2B04EFEA00E7F68E /* Preview Content */,
 			);
 			path = Quillit;
@@ -127,6 +242,52 @@
 			path = QuillitUITests;
 			sourceTree = "<group>";
 		};
+		1D89CE712B04F1E100E7F68E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1D89CE472B04EFE800E7F68E /* ContentView.swift */,
+				1D89CE6F2B04F1BA00E7F68E /* MainView.swift */,
+				1D89CE742B04F25B00E7F68E /* HomeView.swift */,
+				1D89CE762B04F26F00E7F68E /* SearchView.swift */,
+				1D89CE782B04F2C700E7F68E /* NewQuillView.swift */,
+				1D89CE7A2B04F3BC00E7F68E /* NotificationView.swift */,
+				1D89CE7C2B04F3C600E7F68E /* ProfileView.swift */,
+				1DC03B092B06659E00AE0ABC /* LoginView.swift */,
+				1DC03B0B2B0665B000AE0ABC /* CreateAccountView.swift */,
+				1DC03B1B2B0795EA00AE0ABC /* QuillCardView.swift */,
+				1DC03B1D2B07C8F300AE0ABC /* FullQuillView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1DC03B0F2B06B8AA00AE0ABC /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				1DC03B102B06B8CA00AE0ABC /* UserRepository.swift */,
+				1DC03B172B0771EA00AE0ABC /* QuillRepository.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
+		1DCB13152B051ED40091322E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DCB13172B051F070091322E /* User.swift */,
+				1DCB13192B051F140091322E /* Quill.swift */,
+				1DCB131B2B0520520091322E /* Comment.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1DCB13162B051EF80091322E /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DC03B132B06BC1E00AE0ABC /* AuthViewModel.swift */,
+				1DC03B192B07731F00AE0ABC /* QuillViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +304,19 @@
 			dependencies = (
 			);
 			name = Quillit;
+			packageProductDependencies = (
+				1D579D9A2B0647BF00DDC09F /* FirebaseAuth */,
+				1D579D9C2B0647BF00DDC09F /* FirebaseDatabase */,
+				1D579D9E2B0647BF00DDC09F /* FirebaseDatabaseSwift */,
+				1D579DA02B0647BF00DDC09F /* FirebaseFirestore */,
+				1D579DA22B0647BF00DDC09F /* FirebaseFirestoreCombine-Community */,
+				1D579DA42B0647BF00DDC09F /* FirebaseFirestoreSwift */,
+				1D579DA62B0647BF00DDC09F /* FirebaseInAppMessaging-Beta */,
+				1D579DA82B0647BF00DDC09F /* FirebaseInAppMessagingSwift-Beta */,
+				1D579DAA2B0647BF00DDC09F /* FirebaseMessaging */,
+				1D579DAC2B0647BF00DDC09F /* FirebaseStorage */,
+				1D579DAE2B0647BF00DDC09F /* FirebaseStorageCombine-Community */,
+			);
 			productName = Quillit;
 			productReference = 1D89CE422B04EFE800E7F68E /* Quillit.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +389,9 @@
 				Base,
 			);
 			mainGroup = 1D89CE392B04EFE700E7F68E;
+			packageReferences = (
+				1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 1D89CE432B04EFE800E7F68E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,7 +409,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D89CE4D2B04EFEA00E7F68E /* Preview Assets.xcassets in Resources */,
+				1DC03B032B065ADD00AE0ABC /* PTSans-Italic.ttf in Resources */,
+				1DC03B012B065AD900AE0ABC /* PTSans-Bold.ttf in Resources */,
+				1DC03B022B065ADB00AE0ABC /* PTSans-BoldItalic.ttf in Resources */,
+				1DC03B052B065AE000AE0ABC /* SpaceMono-Bold.ttf in Resources */,
+				1DC03B162B06C30300AE0ABC /* GoogleService-Info.plist in Resources */,
+				1DC03B082B065AE600AE0ABC /* SpaceMono-Regular.ttf in Resources */,
+				1DC03B062B065AE200AE0ABC /* SpaceMono-BoldItalic.ttf in Resources */,
 				1D89CE4A2B04EFEA00E7F68E /* Assets.xcassets in Resources */,
+				1DC03B002B065AD700AE0ABC /* Ahsing-Regular.otf in Resources */,
+				1DC03B072B065AE400AE0ABC /* SpaceMono-Italic.ttf in Resources */,
+				1DC03B042B065ADE00AE0ABC /* PTSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +444,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DC03B1E2B07C8F300AE0ABC /* FullQuillView.swift in Sources */,
+				1D89CE7D2B04F3C600E7F68E /* ProfileView.swift in Sources */,
+				1D89CE772B04F26F00E7F68E /* SearchView.swift in Sources */,
+				1DC03B1A2B07731F00AE0ABC /* QuillViewModel.swift in Sources */,
 				1D89CE482B04EFE800E7F68E /* ContentView.swift in Sources */,
+				1D89CE7B2B04F3BC00E7F68E /* NotificationView.swift in Sources */,
+				1D89CE752B04F25B00E7F68E /* HomeView.swift in Sources */,
+				1DC03B142B06BC1E00AE0ABC /* AuthViewModel.swift in Sources */,
+				1DCB13182B051F070091322E /* User.swift in Sources */,
+				1DC03B182B0771EA00AE0ABC /* QuillRepository.swift in Sources */,
+				1DC03B0C2B0665B000AE0ABC /* CreateAccountView.swift in Sources */,
+				1DC03B0A2B06659E00AE0ABC /* LoginView.swift in Sources */,
+				1D89CE792B04F2C700E7F68E /* NewQuillView.swift in Sources */,
+				1DCB131A2B051F140091322E /* Quill.swift in Sources */,
+				1DC03B112B06B8CA00AE0ABC /* UserRepository.swift in Sources */,
+				1D89CE702B04F1BA00E7F68E /* MainView.swift in Sources */,
+				1DCB131C2B0520520091322E /* Comment.swift in Sources */,
+				1DC03B1C2B0795EA00AE0ABC /* QuillCardView.swift in Sources */,
 				1D89CE462B04EFE800E7F68E /* QuillitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,17 +624,19 @@
 				DEVELOPMENT_TEAM = 9L6RNBKCUL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Quillit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Quillit;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gorjan.Quillit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gorjan.Quillit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -449,17 +655,19 @@
 				DEVELOPMENT_TEAM = 9L6RNBKCUL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Quillit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Quillit;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gorjan.Quillit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gorjan.Quillit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -583,6 +791,75 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D579D9A2B0647BF00DDC09F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		1D579D9C2B0647BF00DDC09F /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		1D579D9E2B0647BF00DDC09F /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		1D579DA02B0647BF00DDC09F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1D579DA22B0647BF00DDC09F /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		1D579DA42B0647BF00DDC09F /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		1D579DA62B0647BF00DDC09F /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		1D579DA82B0647BF00DDC09F /* FirebaseInAppMessagingSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessagingSwift-Beta";
+		};
+		1D579DAA2B0647BF00DDC09F /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		1D579DAC2B0647BF00DDC09F /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		1D579DAE2B0647BF00DDC09F /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D579D992B0647BF00DDC09F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1D89CE3A2B04EFE700E7F68E /* Project object */;
 }

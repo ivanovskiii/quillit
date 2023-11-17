@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Group{
+            if authViewModel.userSession !=  nil{
+                MainView()
+            } else {
+                LoginView()
+            }
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(AuthViewModel())
     }
 }
