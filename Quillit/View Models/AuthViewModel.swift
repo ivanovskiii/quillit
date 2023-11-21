@@ -15,6 +15,7 @@ class AuthViewModel: ObservableObject{
     
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
+    @Published var users: [User] = []
     
     init(){
         self.userSession = Auth.auth().currentUser
@@ -51,9 +52,9 @@ class AuthViewModel: ObservableObject{
             print("Failed to create user \(error.self)")
             
             }
-        }
+    }
         
-        func signOut(){
+    func signOut(){
             do{
                 
                 try Auth.auth().signOut()
@@ -65,14 +66,15 @@ class AuthViewModel: ObservableObject{
                 print("Error sign out \(error.localizedDescription)")
                 
             }
-        }
+    }
         
-        func fetchUser() async{
+    func fetchUser() async{
             guard let uid = Auth.auth().currentUser?.uid else { return }
             guard let snapshot = try? await Firestore.firestore().collection("user").document(uid).getDocument() else { return }
             self.currentUser = try? snapshot.data(as: User.self)
             
             print("DEBUG: Current user fetched is: \(String(describing: self.currentUser))")
-        }
+    }
+    
         
 }

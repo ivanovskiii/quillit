@@ -8,19 +8,21 @@ struct MainView: View {
     var body: some View {
         TabView(selection: $selectedItem) {
             NavigationView {
-                HomeView(quillViewModel: QuillViewModel())
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "house")
-                                .font(Font.system(size: 20))
-                            Text("Home")
-                                .font(Font.custom("SpaceMono-Regular", size: 12))
+                            HomeView(quillViewModel: QuillViewModel())
+                                .navigationBarTitle("") // Add navigation bar title if needed
+                        }
+                        .tabItem {
+                            VStack {
+                                Image(systemName: "house")
+                                    .font(Font.system(size: 20))
+                                Text("Home")
+                                    .font(Font.custom("SpaceMono-Regular", size: 12))
                             }
-                    }
-                .tag(1)
-            }
+                        }
+                        .tag(1)
+            
 
-            SearchView()
+            SearchView(userViewModel: UserViewModel())
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                         .font(Font.custom("SpaceMono-Regular", size: 12))
@@ -45,7 +47,7 @@ struct MainView: View {
                 }
                 .tag(4)
 
-            ProfileView()
+            ProfileView(quillViewModel: QuillViewModel())
                 .tabItem {
                     Label("Profile", systemImage: "person")
                         .font(Font.custom("SpaceMono-Regular", size: 12))

@@ -22,7 +22,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct QuillitApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject var authViewModel = AuthViewModel()
+    @StateObject private var authViewModel = AuthViewModel()
+    @StateObject private var quillViewModel = QuillViewModel()
     
 //    init() {
 //            for family in UIFont.familyNames.sorted() {
@@ -32,9 +33,11 @@ struct QuillitApp: App {
 //        }
     
     var body: some Scene {
+        
         WindowGroup {
             ContentView()
-                .environmentObject(AuthViewModel())
+                .environmentObject(authViewModel)
+                .environmentObject(quillViewModel)
         }
     }
 }
