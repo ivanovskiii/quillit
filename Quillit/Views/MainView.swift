@@ -4,6 +4,7 @@ struct MainView: View {
     @State private var isPresenting = false
     @State private var selectedItem = 1
     @State private var oldSelectedItem = 1
+    @EnvironmentObject var authViewModel: AuthViewModel
 
     var body: some View {
         TabView(selection: $selectedItem) {
@@ -47,7 +48,7 @@ struct MainView: View {
                 }
                 .tag(4)
 
-            ProfileView(quillViewModel: QuillViewModel())
+            ProfileView(quillViewModel: QuillViewModel(), user: authViewModel.currentUser)
                 .tabItem {
                     Label("Profile", systemImage: "person")
                         .font(Font.custom("SpaceMono-Regular", size: 12))

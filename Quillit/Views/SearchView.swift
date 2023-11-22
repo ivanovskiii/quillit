@@ -23,31 +23,33 @@ struct SearchView: View {
     }
 
     var body: some View {
-        VStack {
-            Text("Search")
-                .font(Font.custom("Ahsing", size: 25))
-            
-            TextField("Search username", text: $searchText)
-                .padding()
-                .background(Color(.systemGray6))
-                .cornerRadius(10)
-                .padding(.horizontal)
-                .font(Font.custom("SpaceMono-Regular", size: 15))
+        NavigationStack {
+            VStack {
+                Text("Search")
+                    .font(Font.custom("Ahsing", size: 25))
+                
+                TextField("Search username", text: $searchText)
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+                    .frame(height: 60)
+                    .font(Font.custom("SpaceMono-Regular", size: 15))
 
-            List(filteredUsers) { user in
-                HStack {
-                    Text("@\(user.username)")
-                        .font(Font.custom("SpaceMono-Regular", size: 15))
-                    Spacer()
+                List(filteredUsers) { user in
+                    NavigationLink(destination: ProfileView(authViewModel: _authViewModel, quillViewModel: QuillViewModel(), user: user)) {
+                        HStack {
+                            Text("@\(user.username)")
+                                .font(Font.custom("SpaceMono-Regular", size: 15))
+                            Spacer()
+                        }
+                        .padding()
+                    }
                 }
-                .padding()
+    //            .listStyle(PlainListStyle())
+                
             }
-            .listStyle(PlainListStyle())
-            
-            Spacer()
         }
-        .padding(.vertical)
-        .navigationBarTitle("Search Users")
     }
 }
 

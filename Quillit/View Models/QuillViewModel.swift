@@ -11,6 +11,7 @@ final class QuillViewModel: ObservableObject{
     @Published var quillRepository = QuillRepository()
     @Published var quills: [Quill] = []
     @Published var notifications: [String] = []
+    @Published var userQuills: [Quill] = []
 
     private var cancellables: Set<AnyCancellable> = []
 
@@ -61,5 +62,6 @@ final class QuillViewModel: ObservableObject{
     func clearNotifications() {
         notifications.removeAll()
     }
+    
 
 }
