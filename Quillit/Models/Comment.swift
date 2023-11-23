@@ -11,7 +11,7 @@ struct Comment: Identifiable, Codable{
     var id: String
     var content: String
     var user: User
-    var likedBy: [User]
+    var likedBy: [String]
     var replies: [Comment]
     var postedDateTime: Date
 }

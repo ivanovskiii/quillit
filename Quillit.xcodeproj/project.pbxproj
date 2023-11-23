@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D42681E2B0FF31C009425C1 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D42681D2B0FF31C009425C1 /* CommentView.swift */; };
+		1D4268202B0FF3E0009425C1 /* CommentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D42681F2B0FF3E0009425C1 /* CommentRepository.swift */; };
 		1D579D9B2B0647BF00DDC09F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579D9A2B0647BF00DDC09F /* FirebaseAuth */; };
 		1D579D9D2B0647BF00DDC09F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579D9C2B0647BF00DDC09F /* FirebaseDatabase */; };
 		1D579D9F2B0647BF00DDC09F /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579D9E2B0647BF00DDC09F /* FirebaseDatabaseSwift */; };
@@ -73,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D42681D2B0FF31C009425C1 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
+		1D42681F2B0FF3E0009425C1 /* CommentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRepository.swift; sourceTree = "<group>"; };
 		1D579DB42B06532600DDC09F /* PTSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Bold.ttf"; sourceTree = "<group>"; };
 		1D579DB52B06532600DDC09F /* PTSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Italic.ttf"; sourceTree = "<group>"; };
 		1D579DB62B06532700DDC09F /* PTSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Regular.ttf"; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				1DC03B0B2B0665B000AE0ABC /* CreateAccountView.swift */,
 				1DC03B1B2B0795EA00AE0ABC /* QuillCardView.swift */,
 				1DC03B1D2B07C8F300AE0ABC /* FullQuillView.swift */,
+				1D42681D2B0FF31C009425C1 /* CommentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			children = (
 				1DC03B102B06B8CA00AE0ABC /* UserRepository.swift */,
 				1DC03B172B0771EA00AE0ABC /* QuillRepository.swift */,
+				1D42681F2B0FF3E0009425C1 /* CommentRepository.swift */,
 			);
 			path = Repo;
 			sourceTree = "<group>";
@@ -459,6 +465,8 @@
 				1DC03B182B0771EA00AE0ABC /* QuillRepository.swift in Sources */,
 				1DC03B0C2B0665B000AE0ABC /* CreateAccountView.swift in Sources */,
 				1DC03B0A2B06659E00AE0ABC /* LoginView.swift in Sources */,
+				1D42681E2B0FF31C009425C1 /* CommentView.swift in Sources */,
+				1D4268202B0FF3E0009425C1 /* CommentRepository.swift in Sources */,
 				1D89CE792B04F2C700E7F68E /* NewQuillView.swift in Sources */,
 				1DADAA562B0D183000A0EA51 /* UserViewModel.swift in Sources */,
 				1DCB131A2B051F140091322E /* Quill.swift in Sources */,

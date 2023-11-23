@@ -13,6 +13,7 @@ struct FullQuillView: View {
     @EnvironmentObject private var authViewModel: AuthViewModel
     @ObservedObject private var quillViewModel = QuillViewModel()
     @State private var showContextMenu = false
+    @State private var commentText = ""
 
     var body: some View {
         ScrollView {
@@ -62,6 +63,19 @@ struct FullQuillView: View {
                 .font(.subheadline)
                 .foregroundColor(Color("QBlack"))
                 .padding(.top, 5)
+                
+                Spacer()
+                
+                TextField("Add a comment", text: $commentText)
+                    .padding()
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(8)
+
+                // Button to add a comment
+                Button("Add Comment") {
+                    addComment()
+                }
+                
             }
             .padding()
             .frame(minHeight: 180, maxHeight: .infinity)
@@ -71,13 +85,32 @@ struct FullQuillView: View {
             .padding(.horizontal)
             .padding(.vertical, 8)
             .navigationBarTitle("\(quill.title)", displayMode: .inline)
+            
+            ForEach(quill.comments) { comment in
+                CommentView(comment: comment)
+            }
+            
+                       
+                   }
         }
-    }
+    
+        private func addComment() {
+            guard !commentText.isEmpty else { return }
 
+            let newComment = Comment(id: UUID().uuidString, content: commentText, user: authViewModel.currentUser!, likedBy: [], replies: [], postedDateTime: Date())
+
+            quillViewModel.addComment(newComment, to: quill)
+            commentText = "" // Clear the comment input field
+        }
+    
     private func toggleLike() {
         quillViewModel.toggleLike(quill, userID: authViewModel.currentUser?.id)
     }
-}
+        
+        
+    }
+
+
 
 struct FullQuillView_Previews: PreviewProvider {
     static var previews: some View {

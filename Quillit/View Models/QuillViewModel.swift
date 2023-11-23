@@ -6,12 +6,14 @@
 //
 
 import Combine
+import Foundation
 
 final class QuillViewModel: ObservableObject{
     @Published var quillRepository = QuillRepository()
     @Published var quills: [Quill] = []
     @Published var notifications: [String] = []
     @Published var userQuills: [Quill] = []
+    @Published var commentRepository = CommentRepository()
 
     private var cancellables: Set<AnyCancellable> = []
 
@@ -63,5 +65,10 @@ final class QuillViewModel: ObservableObject{
         notifications.removeAll()
     }
     
+    func addComment(_ comment: Comment, to quill: Quill) {
+        quillRepository.update(quill) // Update the quill with the new comment
+        commentRepository.addComment(comment, to: quill.id!)
+    }
+
 
 }

@@ -29,4 +29,8 @@ struct Quill: Identifiable, Codable{
             return "\(firstLiker) and others liked your quill '\(title)'"
         }
     
+    mutating func addComment(_ comment: Comment) {
+            comments.append(comment)
+        }
+    
 }
