@@ -36,7 +36,7 @@ class AuthViewModel: ObservableObject{
         }
     }
         
-    func createAccount(username: String, withEmail email: String, password: String, followers: [User], following: [User]) async throws{
+    func createAccount(username: String, withEmail email: String, password: String, followers: [String], following: [String]) async throws{
         do{
             
             let result = try await Auth.auth().createUser(withEmail: email, password: password)

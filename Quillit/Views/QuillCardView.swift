@@ -35,7 +35,7 @@ struct QuillCardView: View {
                     toggleLike()
                 }) {
                     Image(systemName: quill.isLiked(by: authViewModel.currentUser?.id ?? "") ? "heart.fill" : "heart")
-                        .foregroundColor(quill.isLiked(by: authViewModel.currentUser?.id ?? "") ? .pink : .black)
+                        .foregroundColor(quill.isLiked(by: authViewModel.currentUser?.id ?? "") ? Color("QRed") : .black)
                 }
                 Text("\(quill.likedBy.count)")
                     .font(Font.custom("SpaceMono-Regular", size: 15))

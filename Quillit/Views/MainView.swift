@@ -48,7 +48,7 @@ struct MainView: View {
                 }
                 .tag(4)
 
-            ProfileView(quillViewModel: QuillViewModel(), user: authViewModel.currentUser)
+            ProfileView(quillViewModel: QuillViewModel(), userViewModel: UserViewModel(), user: authViewModel.currentUser)
                 .tabItem {
                     Label("Profile", systemImage: "person")
                         .font(Font.custom("SpaceMono-Regular", size: 12))

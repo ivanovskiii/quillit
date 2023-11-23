@@ -14,11 +14,11 @@ final class UserRepository: ObservableObject {
 
     private let store = Firestore.firestore()
 
-        init() {
-            fetchAllUsers()
-            print("called init")
-        }
-    
+    init() {
+        fetchAllUsers()
+        print("called User Repository init")
+    }
+
     func fetchAllUsers() {
         store.collection("user").addSnapshotListener { querySnapshot, error in
             if let error = error {
@@ -41,10 +41,34 @@ final class UserRepository: ObservableObject {
         }
     }
 
-    
     func update(_ user: User) {
-            if let index = users.firstIndex(where: { $0.id == user.id }) {
-                users[index] = user
-            }
+        do {
+            try store.collection("user").document(user.id).setData(from: user)
+            print("User updated successfully in Firestore!")
+        } catch {
+            print("Error updating user in Firestore: \(error)")
         }
+    }
+
+    func followUser(currentUserID: String, otherUserID: String, isFollowing: Bool) {
+        guard let currentUserIndex = users.firstIndex(where: { $0.id == currentUserID }),
+              let otherUserIndex = users.firstIndex(where: { $0.id == otherUserID }) else {
+            print("Invalid user indices")
+            return
+        }
+
+        if isFollowing {
+            // Unfollow
+            users[currentUserIndex].following.removeAll { $0 == otherUserID }
+            users[otherUserIndex].followers.removeAll { $0 == currentUserID }
+        } else {
+            // Follow
+            users[currentUserIndex].following.append(otherUserID)
+            users[otherUserIndex].followers.append(currentUserID)
+        }
+
+        // Update users in Firestore
+        update(users[currentUserIndex])
+        update(users[otherUserIndex])
+    }
 }

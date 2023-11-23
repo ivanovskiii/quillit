@@ -8,68 +8,103 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
     @EnvironmentObject var authViewModel: AuthViewModel
     @ObservedObject var quillViewModel: QuillViewModel
+    @ObservedObject var userViewModel: UserViewModel
+
     @State private var showContextMenu = false
-    
-    // Introduce a new parameter to represent the user (optional)
+
     var user: User?
-    
-    // Determine if the profile being displayed is the current user's profile
+
     private var isCurrentUserProfile: Bool {
         return user?.id == authViewModel.currentUser?.id
     }
     
+    
+
     var body: some View {
         VStack {
             HStack {
                 Text("\(user?.username ?? authViewModel.currentUser?.username ?? "username")")
                     .font(Font.custom("Ahsing", size: 25))
-                
-                // Show gear icon and options only for the current user's profile
+
+
                 if isCurrentUserProfile {
                     Image(systemName: "gearshape")
                         .font(Font.custom("SpaceMono-Regular", size: 18))
                         .onTapGesture {
                             showContextMenu = true
                         }
-                        .confirmationDialog("Options", isPresented: $showContextMenu, titleVisibility: .visible){
-                            Button("Log Out from @\(user?.username ?? authViewModel.currentUser?.username ?? "username")", role: .destructive){
+                        .confirmationDialog("Options", isPresented: $showContextMenu, titleVisibility: .visible) {
+                            Button("Log Out from @\(user?.username ?? authViewModel.currentUser?.username ?? "username")", role: .destructive) {
                                 authViewModel.signOut()
                             }
                         }
                 }
+                
             }
-            
+
             ScrollView {
                 Circle()
                     .frame(width: 100)
-                HStack (spacing: 60) {
-                    Text("Followers: \(user?.followers.count ?? authViewModel.currentUser?.followers.count ?? 0)")
-                        .font(Font.custom("SpaceMono-Regular", size: 15))
-                    Text("Following: \(user?.following.count ?? authViewModel.currentUser?.following.count ?? 0)")
-                        .font(Font.custom("SpaceMono-Regular", size: 15))
-                }
                 
+                    VStack{
+                        HStack(spacing: 60) {
+                            Text("Followers: \(user?.followers.count ?? authViewModel.currentUser?.followers.count ?? 0)")
+                                .font(Font.custom("SpaceMono-Regular", size: 15))
+                            Text("Following: \(user?.following.count ?? authViewModel.currentUser?.following.count ?? 0)")
+                                .font(Font.custom("SpaceMono-Regular", size: 15))
+                        }
+                    
+                    if !isCurrentUserProfile {
+                        Button(action: {
+                            toggleFollow()
+                        }) {
+                            Text(userViewModel.userIsFollowed(currentUserID: authViewModel.currentUser?.id ?? "", otherUserID: user?.id ?? "")
+                                 ? "Unfollow"
+                                 : "Follow")
+                            .font(Font.custom("SpaceMono-Regular", size: 15))
+                            .foregroundColor(.white)
+                            .background(userViewModel.userIsFollowed(currentUserID: authViewModel.currentUser?.id ?? "", otherUserID: user?.id ?? "")
+                                        ? Color("QBlack")
+                                        : Color("QRed"))
+                            .cornerRadius(5)
+                        }
+                        .padding(.horizontal)
+                    }
+                }
+
                 ForEach(quillViewModel.quills.sorted(by: { $0.postedDateTime > $1.postedDateTime })) { quill in
-                    // Check if the provided user matches the quill's user
-                    if user?.id == quill.user.id || isCurrentUserProfile {
-                        QuillCardView(quill: quill)
-                            .padding(.bottom, 5)
+                    if isCurrentUserProfile {
+                        if authViewModel.currentUser?.id == quill.user.id {
+                            QuillCardView(quill: quill)
+                                .padding(.bottom, 5)
+                        }
+                    } else {
+                        if user?.id == quill.user.id {
+                            QuillCardView(quill: quill)
+                                .padding(.bottom, 5)
+                        }
                     }
                 }
             }
-            
+
             Spacer()
         }
     }
+
+    private func toggleFollow() {
+            guard let currentUserID = authViewModel.currentUser?.id, let otherUserID = user?.id else {
+                return
+            }
+            let isFollowing = userViewModel.userIsFollowed(currentUserID: currentUserID, otherUserID: otherUserID)
+            userViewModel.followUser(currentUserID: currentUserID, otherUserID: otherUserID, isFollowing: isFollowing)
+        }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        // For preview, pass a specific user or leave it nil to display the current user's profile
-        ProfileView(quillViewModel: QuillViewModel(), user: nil)
+        ProfileView(quillViewModel: QuillViewModel(), userViewModel: UserViewModel(), user: nil)
             .environmentObject(AuthViewModel())
     }
 }

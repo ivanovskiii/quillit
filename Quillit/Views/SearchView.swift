@@ -37,7 +37,7 @@ struct SearchView: View {
                     .font(Font.custom("SpaceMono-Regular", size: 15))
 
                 List(filteredUsers) { user in
-                    NavigationLink(destination: ProfileView(authViewModel: _authViewModel, quillViewModel: QuillViewModel(), user: user)) {
+                    NavigationLink(destination: ProfileView(quillViewModel: QuillViewModel(), userViewModel: UserViewModel(), user: user)) {
                         HStack {
                             Text("@\(user.username)")
                                 .font(Font.custom("SpaceMono-Regular", size: 15))
