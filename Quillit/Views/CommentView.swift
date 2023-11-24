@@ -9,6 +9,15 @@ import SwiftUI
 
 struct CommentView: View {
     var comment: Comment
+    @ObservedObject private var commentViewModel = CommentViewModel()
+    @EnvironmentObject private var authViewModel: AuthViewModel // Inject AuthViewModel
+    @State var showContextMenu = false
+
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a, dd.MM.yyyy"
+        return formatter
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -20,10 +29,25 @@ struct CommentView: View {
                 .foregroundColor(Color("QBlack"))
                 .font(Font.custom("PTSans-Regular", size: 18))
 
-            HStack {
-                // Add buttons for liking and replying to comments if needed
+            Text(dateFormatter.string(from: comment.postedDateTime))
+                .font(Font.custom("SpaceMono-Italic", size: 15))
+                .foregroundColor(Color.gray)
 
+            HStack {
                 Spacer()
+
+                if authViewModel.currentUser?.id == comment.user.id {
+                    Image(systemName: "ellipsis")
+                        .font(Font.custom("SpaceMono-Regular", size: 25))
+                        .onTapGesture {
+                            showContextMenu = true
+                        }
+                        .confirmationDialog("Options", isPresented: $showContextMenu, titleVisibility: .visible){
+                            Button("Delete comment", role: .destructive){
+                                commentViewModel.deleteComment(comment, from: comment.quillID!)
+                            }
+                        }
+                }
             }
             .font(.subheadline)
             .foregroundColor(Color("QBlack"))
@@ -38,6 +62,9 @@ struct CommentView: View {
         .padding(.vertical, 8)
     }
 }
+
+
+
 
 
 struct CommentView_Previews: PreviewProvider {

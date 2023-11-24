@@ -64,11 +64,6 @@ final class QuillViewModel: ObservableObject{
     func clearNotifications() {
         notifications.removeAll()
     }
-    
-    func addComment(_ comment: Comment, to quill: Quill) {
-        quillRepository.update(quill) // Update the quill with the new comment
-        commentRepository.addComment(comment, to: quill.id!)
-    }
 
 
 }

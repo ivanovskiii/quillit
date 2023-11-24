@@ -14,4 +14,5 @@ struct Comment: Identifiable, Codable{
     var likedBy: [String]
     var replies: [Comment]
     var postedDateTime: Date
+    var quillID: String?
 }

@@ -12,6 +12,7 @@ struct FullQuillView: View {
 
     @EnvironmentObject private var authViewModel: AuthViewModel
     @ObservedObject private var quillViewModel = QuillViewModel()
+    @ObservedObject private var commentViewModel = CommentViewModel()
     @State private var showContextMenu = false
     @State private var commentText = ""
 
@@ -42,7 +43,7 @@ struct FullQuillView: View {
                         .font(Font.custom("SpaceMono-Regular", size: 15))
 
                     Image(systemName: "message")
-                    Text("\(quill.comments.count)")
+                    Text("\(commentViewModel.comments.count)")
                         .font(Font.custom("SpaceMono-Regular", size: 15))
 
                     Spacer()
@@ -86,22 +87,40 @@ struct FullQuillView: View {
             .padding(.vertical, 8)
             .navigationBarTitle("\(quill.title)", displayMode: .inline)
             
-            ForEach(quill.comments) { comment in
-                CommentView(comment: comment)
+            Text("Comments (\(commentViewModel.comments.count))")
+                .font(Font.custom("SpaceMono-Regular", size: 16))
+            
+            ForEach(commentViewModel.comments) { comment in
+                        CommentView(comment: comment)
             }
             
-                       
-                   }
+        }.onAppear{
+            commentViewModel.fetchComments(for: quill.id ?? "")
         }
+        
+        
+        
+
+    }
     
-        private func addComment() {
+    private func addComment() {
             guard !commentText.isEmpty else { return }
 
             let newComment = Comment(id: UUID().uuidString, content: commentText, user: authViewModel.currentUser!, likedBy: [], replies: [], postedDateTime: Date())
 
-            quillViewModel.addComment(newComment, to: quill)
+            commentViewModel.addComment(newComment, to: quill.id!) { success in
+                if success {
+                    // Fetch updated comments after adding a new one
+                    commentViewModel.fetchComments(for: quill.id ?? "")
+                } else {
+                    // Handle error if needed
+                    print("Error adding comment")
+                }
+            }
+
             commentText = "" // Clear the comment input field
         }
+
     
     private func toggleLike() {
         quillViewModel.toggleLike(quill, userID: authViewModel.currentUser?.id)
@@ -114,7 +133,7 @@ struct FullQuillView: View {
 
 struct FullQuillView_Previews: PreviewProvider {
     static var previews: some View {
-        let exampleQuill = Quill(id: "1", title: "Example Title", content: "Example Content", user: User(id: "1", username: "User123", email: "user@example.com", followers: [], following: []), likedBy: [], comments: [], postedDateTime: Date())
+        let exampleQuill = Quill(id: "1", title: "Example Title", content: "Example Content", user: User(id: "1", username: "User123", email: "user@example.com", followers: [], following: []), likedBy: [], postedDateTime: Date())
         FullQuillView(quill: exampleQuill)
             .environmentObject(AuthViewModel())
     }

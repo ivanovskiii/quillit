@@ -12,6 +12,7 @@ struct QuillCardView: View {
 
     @EnvironmentObject private var authViewModel: AuthViewModel
     @ObservedObject private var quillViewModel = QuillViewModel()
+    @ObservedObject private var commentViewModel = CommentViewModel()
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -41,7 +42,7 @@ struct QuillCardView: View {
                     .font(Font.custom("SpaceMono-Regular", size: 15))
 
                 Image(systemName: "message")
-                Text("\(quill.comments.count)")
+                Text("\(commentViewModel.comments.count)")
                     .font(Font.custom("SpaceMono-Regular", size: 15))
 
                 Spacer()
@@ -49,6 +50,9 @@ struct QuillCardView: View {
             .font(.subheadline)
             .foregroundColor(Color("QBlack"))
             .padding(.top, 5)
+            .onAppear{
+                commentViewModel.fetchComments(for: quill.id ?? "")
+            }
         }
         .padding()
         .background(Color.white)
@@ -76,7 +80,7 @@ struct QuillCardView: View {
 
 struct QuillCardView_Previews: PreviewProvider {
     static var previews: some View {
-        let exampleQuill = Quill(id: "1", title: "Example Title", content: "Example Content", user: User(id: "1", username: "User123", email: "user@example.com", followers: [], following: []), likedBy: [], comments: [], postedDateTime: Date())
+        let exampleQuill = Quill(id: "1", title: "Example Title", content: "Example Content", user: User(id: "1", username: "User123", email: "user@example.com", followers: [], following: []), likedBy: [], postedDateTime: Date())
         QuillCardView(quill: exampleQuill)
             .environmentObject(AuthViewModel())
     }

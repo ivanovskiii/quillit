@@ -46,7 +46,7 @@ struct NewQuillView: View {
                 trailing: Button("Post") {
                     // Handle post action
                     
-                    let quill = Quill(title: title, content: content, user: authViewModel.currentUser!, likedBy: [], comments: [], postedDateTime: Date())
+                    let quill = Quill(title: title, content: content, user: authViewModel.currentUser!, likedBy: [], postedDateTime: Date())
                     
                     quillViewModel.add(quill)
                     let impactMed = UIImpactFeedbackGenerator(style: .rigid)

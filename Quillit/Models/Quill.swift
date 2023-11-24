@@ -15,7 +15,6 @@ struct Quill: Identifiable, Codable{
     var content: String
     var user: User
     var likedBy: [String]
-    var comments: [Comment]
     var postedDateTime: Date
     
     func isLiked(by userID: String) -> Bool {
@@ -27,10 +26,6 @@ struct Quill: Identifiable, Codable{
                 return ""
             }
             return "\(firstLiker) and others liked your quill '\(title)'"
-        }
-    
-    mutating func addComment(_ comment: Comment) {
-            comments.append(comment)
         }
     
 }
