@@ -74,8 +74,10 @@ struct QuillCardView: View {
     }
 
     private func toggleLike() {
-        quillViewModel.toggleLike(quill, userID: authViewModel.currentUser?.id)
-    }
+            Task {
+                await quillViewModel.toggleLike(quill, user: authViewModel.currentUser)
+            }
+        }
 }
 
 struct QuillCardView_Previews: PreviewProvider {

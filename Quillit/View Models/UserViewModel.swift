@@ -26,6 +26,10 @@ class UserViewModel: ObservableObject {
     func followUser(currentUserID: String, otherUserID: String, isFollowing: Bool) {
         userRepository.followUser(currentUserID: currentUserID, otherUserID: otherUserID, isFollowing: isFollowing)
     }
+    
+    func fetchUserByID(userID: String, completion: @escaping (User?) -> Void) {
+        userRepository.fetchUserByID(userID: userID, completion: completion)
+    }
 
     func userIsFollowed(currentUserID: String, otherUserID: String) -> Bool {
         guard let currentUser = users.first(where: { $0.id == currentUserID }) else {

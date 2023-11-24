@@ -50,7 +50,7 @@ final class QuillRepository: ObservableObject{
             }
         }
     
-    func update(_ quill: Quill) {
+    func update(_ quill: Quill) throws {
             do {
                 try store.collection("quills").document(quill.id!).setData(from: quill)
                 print("Quill updated successfully in Firestore!")

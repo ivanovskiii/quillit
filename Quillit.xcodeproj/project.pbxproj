@@ -56,6 +56,8 @@
 		1DCB13182B051F070091322E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB13172B051F070091322E /* User.swift */; };
 		1DCB131A2B051F140091322E /* Quill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB13192B051F140091322E /* Quill.swift */; };
 		1DCB131C2B0520520091322E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCB131B2B0520520091322E /* Comment.swift */; };
+		1DDC42912B188CFE004E1230 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC42902B188CFE004E1230 /* Notification.swift */; };
+		1DDC42942B188D42004E1230 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDC42932B188D42004E1230 /* NotificationType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		1DCB13172B051F070091322E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1DCB13192B051F140091322E /* Quill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quill.swift; sourceTree = "<group>"; };
 		1DCB131B2B0520520091322E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		1DDC42902B188CFE004E1230 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		1DDC42932B188D42004E1230 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,13 +160,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D579D962B06461500DDC09F /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
 		1D579DB02B06530300DDC09F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +210,6 @@
 				1DC03B0F2B06B8AA00AE0ABC /* Repo */,
 				1D579DBE2B0654BE00DDC09F /* Shared */,
 				1D579DBD2B06537100DDC09F /* Info.plist */,
-				1D579D962B06461500DDC09F /* Repository */,
 				1DCB13162B051EF80091322E /* View Models */,
 				1DCB13152B051ED40091322E /* Models */,
 				1D89CE712B04F1E100E7F68E /* Views */,
@@ -282,9 +278,11 @@
 		1DCB13152B051ED40091322E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1DDC42922B188D37004E1230 /* Enum */,
 				1DCB13172B051F070091322E /* User.swift */,
 				1DCB13192B051F140091322E /* Quill.swift */,
 				1DCB131B2B0520520091322E /* Comment.swift */,
+				1DDC42902B188CFE004E1230 /* Notification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,6 +296,14 @@
 				1D4268212B10C00A009425C1 /* CommentViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		1DDC42922B188D37004E1230 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				1DDC42932B188D42004E1230 /* NotificationType.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,12 +476,14 @@
 				1DC03B0C2B0665B000AE0ABC /* CreateAccountView.swift in Sources */,
 				1DC03B0A2B06659E00AE0ABC /* LoginView.swift in Sources */,
 				1D42681E2B0FF31C009425C1 /* CommentView.swift in Sources */,
+				1DDC42942B188D42004E1230 /* NotificationType.swift in Sources */,
 				1D4268202B0FF3E0009425C1 /* CommentRepository.swift in Sources */,
 				1D89CE792B04F2C700E7F68E /* NewQuillView.swift in Sources */,
 				1DADAA562B0D183000A0EA51 /* UserViewModel.swift in Sources */,
 				1DCB131A2B051F140091322E /* Quill.swift in Sources */,
 				1DC03B112B06B8CA00AE0ABC /* UserRepository.swift in Sources */,
 				1D89CE702B04F1BA00E7F68E /* MainView.swift in Sources */,
+				1DDC42912B188CFE004E1230 /* Notification.swift in Sources */,
 				1DCB131C2B0520520091322E /* Comment.swift in Sources */,
 				1DC03B1C2B0795EA00AE0ABC /* QuillCardView.swift in Sources */,
 				1D89CE462B04EFE800E7F68E /* QuillitApp.swift in Sources */,

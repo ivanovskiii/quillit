@@ -40,6 +40,30 @@ final class UserRepository: ObservableObject {
             }
         }
     }
+    
+    func fetchUserByID(userID: String, completion: @escaping (User?) -> Void) {
+        store.collection("user").document(userID).getDocument { document, error in
+            if let error = error {
+                print("Error fetching user by ID: \(error)")
+                completion(nil)
+                return
+            }
+
+            guard let document = document, document.exists else {
+                print("User not found by ID")
+                completion(nil)
+                return
+            }
+
+            do {
+                let user = try document.data(as: User.self)
+                completion(user)
+            } catch {
+                print("Error decoding user by ID: \(error)")
+                completion(nil)
+            }
+        }
+    }
 
     func update(_ user: User) {
         do {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Ahsing-Regular.otf</string>
+		<string>SpaceMono-Regular.ttf</string>
+		<string>SpaceMono-Italic.ttf</string>
+		<string>SpaceMono-BoldItalic.ttf</string>
+		<string>SpaceMono-Bold.ttf</string>
+		<string>PTSans-Bold.ttf</string>
+		<string>PTSans-BoldItalic.ttf</string>
+		<string>PTSans-Italic.ttf</string>
+		<string>PTSans-Regular.ttf</string>
+	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict/>
+	</array>
+</dict>
+</plist>

@@ -20,18 +20,6 @@ struct HomeView: View {
                     .scaledToFit()
                     .frame(width: 100)
                     .frame(maxWidth: .infinity, alignment: .top)
-                
-                Picker(selection: $selectedTab, label: Text("Tab")) {
-                    Text("For You")
-                        .tag(0)
-                        .font(Font.custom("SpaceMono-Regular", size: 15))
-                    Text("Following")
-                        .tag(1)
-                        .font(Font.custom("SpaceMono-Regular", size: 15))
-                }
-                                .pickerStyle(SegmentedPickerStyle())
-                                .padding(.horizontal)
-                                .padding(.top, 5)
             }
             
             ScrollView {
