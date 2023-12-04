@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct NotificationView: View {
-    @EnvironmentObject private var quillViewModel: QuillViewModel
     @EnvironmentObject private var authViewModel: AuthViewModel
-    @EnvironmentObject private var userViewModel: UserViewModel
+    @EnvironmentObject private var notificationViewModel: NotificationViewModel
 
     var body: some View {
         VStack {
@@ -19,18 +18,15 @@ struct NotificationView: View {
             
             Spacer()
 
-            List(quillViewModel.notifications) { notification in
-                if notification.type == .like {
-                    // Directly use the non-optional user object
-                    NotificationRowView(user: notification.user)
-                }
+            List(notificationViewModel.notifications) { notification in
+                    NotificationRowView(notification: notification)
             }
         }
         .onAppear {
             // Fetch notifications when the view appears
             Task {
                 if let userID = authViewModel.currentUser?.id {
-                    await quillViewModel.fetchNotifications(forUserID: userID)
+                    await notificationViewModel.fetchNotifications(forUserID: userID)
                 }
             }
         }
@@ -38,17 +34,23 @@ struct NotificationView: View {
 }
 
 struct NotificationRowView: View {
-    let user: User
+    let notification: Notification
 
     var body: some View {
         HStack {
-            // You can customize the view based on the notification
-            Text("\(user.username) liked your quill")
+            if notification.type == .like {
+                Text("\(notification.user.username) liked your quill.")
+            }
+            
+            if notification.type == .follow {
+                Text("\(notification.user.username) followed you.")
+            }
             Spacer()
         }
         .padding()
     }
 }
+
 
 
 
