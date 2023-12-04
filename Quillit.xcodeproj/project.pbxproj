@@ -21,6 +21,8 @@
 		1D579DAB2B0647BF00DDC09F /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DAA2B0647BF00DDC09F /* FirebaseMessaging */; };
 		1D579DAD2B0647BF00DDC09F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DAC2B0647BF00DDC09F /* FirebaseStorage */; };
 		1D579DAF2B0647BF00DDC09F /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DAE2B0647BF00DDC09F /* FirebaseStorageCombine-Community */; };
+		1D6817D72B1A5D6900408BA8 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6817D62B1A5D6900408BA8 /* NotificationViewModel.swift */; };
+		1D6817D92B1A5E0700408BA8 /* NotificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6817D82B1A5E0700408BA8 /* NotificationRepository.swift */; };
 		1D89CE462B04EFE800E7F68E /* QuillitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE452B04EFE800E7F68E /* QuillitApp.swift */; };
 		1D89CE482B04EFE800E7F68E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE472B04EFE800E7F68E /* ContentView.swift */; };
 		1D89CE4A2B04EFEA00E7F68E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D89CE492B04EFEA00E7F68E /* Assets.xcassets */; };
@@ -91,6 +93,8 @@
 		1D579DBB2B06533100DDC09F /* SpaceMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Bold.ttf"; sourceTree = "<group>"; };
 		1D579DBC2B06533C00DDC09F /* Ahsing-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ahsing-Regular.otf"; sourceTree = "<group>"; };
 		1D579DBD2B06537100DDC09F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1D6817D62B1A5D6900408BA8 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		1D6817D82B1A5E0700408BA8 /* NotificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRepository.swift; sourceTree = "<group>"; };
 		1D89CE422B04EFE800E7F68E /* Quillit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quillit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D89CE452B04EFE800E7F68E /* QuillitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillitApp.swift; sourceTree = "<group>"; };
 		1D89CE472B04EFE800E7F68E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				1DC03B102B06B8CA00AE0ABC /* UserRepository.swift */,
 				1DC03B172B0771EA00AE0ABC /* QuillRepository.swift */,
 				1D42681F2B0FF3E0009425C1 /* CommentRepository.swift */,
+				1D6817D82B1A5E0700408BA8 /* NotificationRepository.swift */,
 			);
 			path = Repo;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				1DC03B192B07731F00AE0ABC /* QuillViewModel.swift */,
 				1DADAA552B0D183000A0EA51 /* UserViewModel.swift */,
 				1D4268212B10C00A009425C1 /* CommentViewModel.swift */,
+				1D6817D62B1A5D6900408BA8 /* NotificationViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -477,12 +483,14 @@
 				1DC03B0A2B06659E00AE0ABC /* LoginView.swift in Sources */,
 				1D42681E2B0FF31C009425C1 /* CommentView.swift in Sources */,
 				1DDC42942B188D42004E1230 /* NotificationType.swift in Sources */,
+				1D6817D72B1A5D6900408BA8 /* NotificationViewModel.swift in Sources */,
 				1D4268202B0FF3E0009425C1 /* CommentRepository.swift in Sources */,
 				1D89CE792B04F2C700E7F68E /* NewQuillView.swift in Sources */,
 				1DADAA562B0D183000A0EA51 /* UserViewModel.swift in Sources */,
 				1DCB131A2B051F140091322E /* Quill.swift in Sources */,
 				1DC03B112B06B8CA00AE0ABC /* UserRepository.swift in Sources */,
 				1D89CE702B04F1BA00E7F68E /* MainView.swift in Sources */,
+				1D6817D92B1A5E0700408BA8 /* NotificationRepository.swift in Sources */,
 				1DDC42912B188CFE004E1230 /* Notification.swift in Sources */,
 				1DCB131C2B0520520091322E /* Comment.swift in Sources */,
 				1DC03B1C2B0795EA00AE0ABC /* QuillCardView.swift in Sources */,

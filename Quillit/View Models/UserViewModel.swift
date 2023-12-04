@@ -13,6 +13,7 @@ import Combine
 @MainActor
 class UserViewModel: ObservableObject {
     @Published var userRepository = UserRepository()
+    @Published var notificationRepository = NotificationRepository()
     @Published var users: [User] = []
 
     private var cancellables: Set<AnyCancellable> = []
@@ -25,6 +26,20 @@ class UserViewModel: ObservableObject {
 
     func followUser(currentUserID: String, otherUserID: String, isFollowing: Bool) {
         userRepository.followUser(currentUserID: currentUserID, otherUserID: otherUserID, isFollowing: isFollowing)
+
+        if isFollowing {
+                // If the user is being followed, create and store a follow notification
+                userRepository.fetchUserByID(userID: currentUserID) { fetchedCurrentUser in
+                    if let currentUser = fetchedCurrentUser {
+                        let followNotification = Notification(id: UUID().uuidString, type: .follow, user: currentUser)
+                        Task {
+                            await self.notificationRepository.storeNotification(followNotification, forUserId: otherUserID)
+                        }
+                    } else {
+                        print("Error fetching current user for follow notification")
+                    }
+                }
+            }
     }
     
     func fetchUserByID(userID: String, completion: @escaping (User?) -> Void) {
@@ -37,5 +52,7 @@ class UserViewModel: ObservableObject {
         }
         return currentUser.following.contains(where: { $0 == otherUserID })
     }
+    
+    
 }
 

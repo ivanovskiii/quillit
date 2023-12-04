@@ -13,5 +13,4 @@ struct User: Identifiable, Codable{
     var email: String
     var followers: [String]
     var following: [String]
-//    var notifications: [Notification]
 }

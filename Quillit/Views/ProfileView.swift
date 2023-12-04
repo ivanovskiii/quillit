@@ -63,14 +63,16 @@ struct ProfileView: View {
                             Text(userViewModel.userIsFollowed(currentUserID: authViewModel.currentUser?.id ?? "", otherUserID: user?.id ?? "")
                                  ? "Unfollow"
                                  : "Follow")
-                            .font(Font.custom("SpaceMono-Regular", size: 15))
-                            .foregroundColor(.white)
-                            .background(userViewModel.userIsFollowed(currentUserID: authViewModel.currentUser?.id ?? "", otherUserID: user?.id ?? "")
-                                        ? Color("QBlack")
-                                        : Color("QRed"))
-                            .cornerRadius(5)
+                                .font(Font.custom("SpaceMono-Regular", size: 15))
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(userViewModel.userIsFollowed(currentUserID: authViewModel.currentUser?.id ?? "", otherUserID: user?.id ?? "")
+                                            ? Color("QBlack")
+                                            : Color("QRed"))
+                                .cornerRadius(10)
                         }
-                        .padding(.horizontal)
+                        .padding(.horizontal, 50)
+                        Spacer()
                     }
                 }
 
