@@ -21,6 +21,7 @@
 		1D579DAB2B0647BF00DDC09F /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DAA2B0647BF00DDC09F /* FirebaseMessaging */; };
 		1D579DAD2B0647BF00DDC09F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DAC2B0647BF00DDC09F /* FirebaseStorage */; };
 		1D579DAF2B0647BF00DDC09F /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1D579DAE2B0647BF00DDC09F /* FirebaseStorageCombine-Community */; };
+		1D585D9E2B1F4DC700CB0F1B /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D585D9D2B1F4DC700CB0F1B /* ImagePickerView.swift */; };
 		1D6817D72B1A5D6900408BA8 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6817D62B1A5D6900408BA8 /* NotificationViewModel.swift */; };
 		1D6817D92B1A5E0700408BA8 /* NotificationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6817D82B1A5E0700408BA8 /* NotificationRepository.swift */; };
 		1D89CE462B04EFE800E7F68E /* QuillitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89CE452B04EFE800E7F68E /* QuillitApp.swift */; };
@@ -93,6 +94,7 @@
 		1D579DBB2B06533100DDC09F /* SpaceMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Bold.ttf"; sourceTree = "<group>"; };
 		1D579DBC2B06533C00DDC09F /* Ahsing-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ahsing-Regular.otf"; sourceTree = "<group>"; };
 		1D579DBD2B06537100DDC09F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1D585D9D2B1F4DC700CB0F1B /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		1D6817D62B1A5D6900408BA8 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		1D6817D82B1A5E0700408BA8 /* NotificationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRepository.swift; sourceTree = "<group>"; };
 		1D89CE422B04EFE800E7F68E /* Quillit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quillit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +190,14 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		1D585D9C2B1F4DAC00CB0F1B /* Component Views */ = {
+			isa = PBXGroup;
+			children = (
+				1D585D9D2B1F4DC700CB0F1B /* ImagePickerView.swift */,
+			);
+			path = "Component Views";
+			sourceTree = "<group>";
+		};
 		1D89CE392B04EFE700E7F68E = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +263,7 @@
 		1D89CE712B04F1E100E7F68E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D585D9C2B1F4DAC00CB0F1B /* Component Views */,
 				1D89CE472B04EFE800E7F68E /* ContentView.swift */,
 				1D89CE6F2B04F1BA00E7F68E /* MainView.swift */,
 				1D89CE742B04F25B00E7F68E /* HomeView.swift */,
@@ -472,6 +483,7 @@
 				1DC03B1E2B07C8F300AE0ABC /* FullQuillView.swift in Sources */,
 				1D89CE7D2B04F3C600E7F68E /* ProfileView.swift in Sources */,
 				1D89CE772B04F26F00E7F68E /* SearchView.swift in Sources */,
+				1D585D9E2B1F4DC700CB0F1B /* ImagePickerView.swift in Sources */,
 				1DC03B1A2B07731F00AE0ABC /* QuillViewModel.swift in Sources */,
 				1D89CE482B04EFE800E7F68E /* ContentView.swift in Sources */,
 				1D89CE7B2B04F3BC00E7F68E /* NotificationView.swift in Sources */,

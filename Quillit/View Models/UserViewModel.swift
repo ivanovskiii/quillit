@@ -53,6 +53,10 @@ class UserViewModel: ObservableObject {
         return currentUser.following.contains(where: { $0 == otherUserID })
     }
     
+    func uploadProfilePicture(userID: String, image: UIImage, completion: @escaping (Result<String, Error>) -> Void) {
+        userRepository.uploadProfilePicture(image: image, userID: userID, completion: completion)
+    }
+    
     
 }
 

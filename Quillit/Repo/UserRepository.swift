@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import FirebaseStorage
 
 final class UserRepository: ObservableObject {
     @Published var users: [User] = []
@@ -95,4 +96,32 @@ final class UserRepository: ObservableObject {
         update(users[currentUserIndex])
         update(users[otherUserIndex])
     }
+    
+    func uploadProfilePicture(image: UIImage, userID: String, completion: @escaping (Result<String, Error>) -> Void) {
+        let storageRef = Storage.storage().reference().child("profilePictures/\(userID).jpg")
+
+        guard let imageData = image.jpegData(compressionQuality: 0.1) else {
+            completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "Image conversion failed"])))
+            return
+        }
+
+        storageRef.putData(imageData, metadata: nil) { metadata, error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                storageRef.downloadURL { url, error in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else if let downloadURL = url {
+                        // Update the user's profilePictureURL in Firestore
+                        self.store.collection("user").document(userID).updateData(["profilePictureURL": downloadURL.absoluteString])
+
+                        completion(.success(downloadURL.absoluteString))
+                    }
+                }
+            }
+        }
+    }
+
+    
 }

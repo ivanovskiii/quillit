@@ -13,6 +13,12 @@ struct ProfileView: View {
     @ObservedObject var userViewModel: UserViewModel
 
     @State private var showContextMenu = false
+    
+    @State private var isImagePickerPresented: Bool = false
+    @State private var selectedImage: UIImage?
+    @State private var profilePicture: UIImage?
+    
+    @State private var isUploading = false
 
     var user: User?
 
@@ -45,8 +51,48 @@ struct ProfileView: View {
             }
 
             ScrollView {
-                Circle()
-                    .frame(width: 100)
+                AsyncImage(url: URL(string: user?.profilePictureURL ?? "")) { phase in
+                    switch phase {
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                    case .failure(let error):
+                        Text("Failed to load image: \(error.localizedDescription)")
+                    case .empty:
+                        Image(systemName: "person.circle.fill")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                    @unknown default:
+                        EmptyView()
+                    }
+                }
+                    .onTapGesture {
+                        isImagePickerPresented = true
+                    }
+                    .sheet(isPresented: $isImagePickerPresented){
+                        ImagePickerView(image: $selectedImage)
+                        
+                    }
+                    .onChange(of: selectedImage) { newImage in
+                        if newImage != nil {
+                            uploadProfilePicture()
+                        }
+                    }
+                    .onAppear {
+                    }
+                    .background(
+                        profilePicture.map {
+                        Image(uiImage: $0)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 100, height: 100)
+                                .clipShape(Circle())
+                        }
+                    )
                 
                     VStack{
                         HStack(spacing: 60) {
@@ -90,6 +136,12 @@ struct ProfileView: View {
                     }
                 }
             }
+            .overlay(
+                isUploading ? ProgressView("Uploading Profile Picture...") : nil
+            )
+            .disabled(isUploading) // Disable interaction while uploading
+            .blur(radius: isUploading ? 3 : 0)
+
 
             Spacer()
         }
@@ -102,6 +154,30 @@ struct ProfileView: View {
             let isFollowing = userViewModel.userIsFollowed(currentUserID: currentUserID, otherUserID: otherUserID)
             userViewModel.followUser(currentUserID: currentUserID, otherUserID: otherUserID, isFollowing: isFollowing)
         }
+    
+    private func uploadProfilePicture() {
+        guard let userID = user?.id, let selectedImage = selectedImage else {
+            return
+        }
+        
+        isUploading = true
+
+        userViewModel.uploadProfilePicture(userID: userID, image: selectedImage) { result in
+            switch result {
+            case .success(let imageURL):
+                print("Profile picture uploaded successfully. URL: \(imageURL)")
+                isUploading = false
+
+            case .failure(let error):
+                print("Error uploading profile picture: \(error)")
+                isUploading = false
+            }
+        }
+    }
+    
+
+    
+
 }
 
 struct ProfileView_Previews: PreviewProvider {

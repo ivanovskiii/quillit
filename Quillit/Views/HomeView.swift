@@ -24,8 +24,8 @@ struct HomeView: View {
             }
 
             Picker("Tabs", selection: $selectedTab) {
-                Text("For You").tag(0)
-                Text("Following").tag(1)
+                Text("✨ Discover").tag(0)
+                Text("👥 Following").tag(1)
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding()
