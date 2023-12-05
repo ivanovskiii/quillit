@@ -37,7 +37,7 @@ struct FullQuillView: View {
                         toggleLike()
                     }) {
                         Image(systemName: quill.isLiked(by: authViewModel.currentUser?.id ?? "") ? "heart.fill" : "heart")
-                            .foregroundColor(quill.isLiked(by: authViewModel.currentUser?.id ?? "") ? .pink : .black)
+                            .foregroundColor(quill.isLiked(by: authViewModel.currentUser?.id ?? "") ? Color("QRed") : .black)
                     }
                     Text("\(quill.likedBy.count)")
                         .font(Font.custom("SpaceMono-Regular", size: 15))
@@ -67,14 +67,19 @@ struct FullQuillView: View {
                 
                 Spacer()
                 
-                TextField("Add a comment", text: $commentText)
-                    .padding()
-                    .background(Color.gray.opacity(0.1))
-                    .cornerRadius(8)
+                HStack{
+                    TextField("Add a comment", text: $commentText)
+                        .padding()
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(8)
 
-                // Button to add a comment
-                Button("Add Comment") {
-                    addComment()
+                    Button {
+                        addComment()
+                    } label: {
+                        Image(systemName: "arrow.up.circle.fill")
+                            .font(.title)
+                            .foregroundColor(Color("QRed"))
+                    }
                 }
                 
             }
