@@ -112,12 +112,12 @@ struct ProfileView: View {
                                 .font(Font.custom("SpaceMono-Regular", size: 15))
                                 .foregroundColor(.white)
                                 .padding()
+                                .padding(.horizontal, 145)
                                 .background(userViewModel.userIsFollowed(currentUserID: authViewModel.currentUser?.id ?? "", otherUserID: user?.id ?? "")
                                             ? Color("QBlack")
                                             : Color("QRed"))
                                 .cornerRadius(10)
                         }
-                        .padding(.horizontal, 50)
                         Spacer()
                     }
                 }

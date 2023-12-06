@@ -12,6 +12,7 @@ struct HomeView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @EnvironmentObject var userViewModel: UserViewModel
     @State private var selectedTab = 0
+    @State private var followingListIsEmpty = false
 
     var body: some View {
         VStack(alignment: .center) {
@@ -22,7 +23,7 @@ struct HomeView: View {
                     .frame(width: 100)
                     .frame(maxWidth: .infinity, alignment: .top)
             }
-
+            
             Picker("Tabs", selection: $selectedTab) {
                 Text("✨ Discover").tag(0)
                     .font(Font.custom("SpaceMono-Regular", size: 13))
@@ -32,17 +33,27 @@ struct HomeView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding()
             .font(Font.custom("SpaceMono-Regular", size: 15))
-
+            
             ScrollView {
                 switch selectedTab {
                 case 0:
-                    // Display quills from users who are followed by users you follow
-                    ForEach(getDiscoverQuills()) { quill in
-                        QuillCardView(quill: quill)
-                            .padding(.bottom, 5)
+                    
+                    if(followingListIsEmpty){
+                        ForEach(getRecentQuills()) { quill in
+                            QuillCardView(quill: quill)
+                                .padding(.bottom, 5)
+                        }
+                        
+                    } else {
+
+                        ForEach(getDiscoverQuills()) { quill in
+                            QuillCardView(quill: quill)
+                                .padding(.bottom, 5)
+                        }
+                        
                     }
+                    
                 case 1:
-                    // Display quills from users you follow
                     ForEach(getFollowingQuills()) { quill in
                         QuillCardView(quill: quill)
                             .padding(.bottom, 5)
@@ -52,7 +63,42 @@ struct HomeView: View {
                 }
             }
         }
+        .onAppear {
+            print("onAppear called")
+
+            // Check if the user is logged in and currentUser is available
+            if let currentUser = authViewModel.currentUser {
+                if currentUser.following.isEmpty {
+                    followingListIsEmpty = true
+                    print("following list is empty")
+                } else {
+                    followingListIsEmpty = false
+                    print("following list is not empty")
+                }
+            } else {
+                // Handle the case where currentUser is nil
+                followingListIsEmpty = true
+                print("currentUser is nil")
+            }
+        }
+
+
     }
+    
+    private func getRecentQuills() -> [Quill] {
+        // Calculate the date one week ago from the current date
+        let oneWeekAgo = Calendar.current.date(byAdding: .weekOfYear, value: -1, to: Date()) ?? Date()
+
+        // Filter quills posted in the past week
+        let recentQuills = quillViewModel.quills
+            .filter { quill in
+                return quill.postedDateTime > oneWeekAgo
+            }
+            .sorted(by: { $0.postedDateTime > $1.postedDateTime })
+
+        return recentQuills
+    }
+
 
     private func getFollowingQuills() -> [Quill] {
         let currentUserID = authViewModel.currentUser?.id
