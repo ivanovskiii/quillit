@@ -17,8 +17,9 @@ struct CreateAccountView: View {
         VStack(alignment: .center){
             Spacer()
             
-            Circle()
-                .frame(width: 200)
+            Text("Create Account")
+                .font(Font.custom("Ahsing", size: 30))
+                .foregroundStyle(Color("QBlack"))
             
             Spacer()
             TextField("Username", text: $username, prompt:
