@@ -39,11 +39,53 @@ struct NotificationRowView: View {
     var body: some View {
         HStack {
             if notification.type == .like {
-                Text("\(notification.user.username) liked your quill.")
+                HStack{
+                    AsyncImage(url: URL(string: notification.user.profilePictureURL ?? "")) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 50, height: 50)
+                                .clipShape(Circle())
+                        case .failure(let error):
+                            Text("Failed to load image: \(error.localizedDescription)")
+                        case .empty:
+                            Image(systemName: "person.circle.fill")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 50, height: 50)
+                        @unknown default:
+                            EmptyView()
+                        }
+                    }
+                    Text("\(notification.user.username) liked your quill.")
+                }
             }
             
             if notification.type == .follow {
-                Text("\(notification.user.username) followed you.")
+                HStack{
+                    AsyncImage(url: URL(string: notification.user.profilePictureURL ?? "")) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 50, height: 50)
+                                .clipShape(Circle())
+                        case .failure(let error):
+                            Text("Failed to load image: \(error.localizedDescription)")
+                        case .empty:
+                            Image(systemName: "person.circle.fill")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 50, height: 50)
+                        @unknown default:
+                            EmptyView()
+                        }
+                    }
+                    Text("\(notification.user.username) followed you.")
+                }
             }
             Spacer()
         }

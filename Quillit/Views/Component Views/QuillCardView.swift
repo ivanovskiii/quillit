@@ -16,9 +16,11 @@ struct QuillCardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("\(quill.user.username)")
-                .font(Font.custom("SpaceMono-Italic", size: 15))
-                .foregroundColor(Color.gray)
+            NavigationLink(destination: ProfileView(quillViewModel: QuillViewModel(), userViewModel: UserViewModel(), user: quill.user)){
+                Text("\(quill.user.username)")
+                    .font(Font.custom("SpaceMono-Italic", size: 15))
+                    .foregroundColor(Color.gray)
+            }
 
             NavigationLink(destination: FullQuillView(quill: quill)) {
                 Text("\(quill.title) >")

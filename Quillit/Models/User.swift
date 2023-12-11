@@ -19,3 +19,4 @@ struct User: Identifiable, Codable, Equatable{
             return lhs.id == rhs.id
         }
 }
+

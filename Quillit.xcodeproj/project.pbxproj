@@ -194,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				1D585D9D2B1F4DC700CB0F1B /* ImagePickerView.swift */,
+				1DC03B1B2B0795EA00AE0ABC /* QuillCardView.swift */,
+				1D89CE782B04F2C700E7F68E /* NewQuillView.swift */,
 			);
 			path = "Component Views";
 			sourceTree = "<group>";
@@ -268,12 +270,10 @@
 				1D89CE6F2B04F1BA00E7F68E /* MainView.swift */,
 				1D89CE742B04F25B00E7F68E /* HomeView.swift */,
 				1D89CE762B04F26F00E7F68E /* SearchView.swift */,
-				1D89CE782B04F2C700E7F68E /* NewQuillView.swift */,
 				1D89CE7A2B04F3BC00E7F68E /* NotificationView.swift */,
 				1D89CE7C2B04F3C600E7F68E /* ProfileView.swift */,
 				1DC03B092B06659E00AE0ABC /* LoginView.swift */,
 				1DC03B0B2B0665B000AE0ABC /* CreateAccountView.swift */,
-				1DC03B1B2B0795EA00AE0ABC /* QuillCardView.swift */,
 				1DC03B1D2B07C8F300AE0ABC /* FullQuillView.swift */,
 				1D42681D2B0FF31C009425C1 /* CommentView.swift */,
 			);
